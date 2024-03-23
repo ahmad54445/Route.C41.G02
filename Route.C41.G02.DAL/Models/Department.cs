@@ -11,8 +11,11 @@ namespace Route.C41.G02.DAL.Models
     public class Department
     {
         public int Id { get; set; }//for beck end
+        [Required]
         public string Code { get; set; }// We dont use nullable dont suuport in Net 5
+        [Required]
         public string Name { get; set; }
+        [Display(Name = "Date Of Creation")]
         public DateTime DateOfCreateion { get; set; }
     }
 }

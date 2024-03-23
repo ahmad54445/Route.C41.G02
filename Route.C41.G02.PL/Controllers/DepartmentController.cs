@@ -21,8 +21,9 @@ namespace Route.C41.G02.PL.Controllers
 
         public IActionResult Index()// Return master Paspe 
         {
-            //var department-_departmentRepo.
-            return View();
+            var department=_departmentRepo.GetAll();
+            return View(department); 
+
         }
     }
 }
