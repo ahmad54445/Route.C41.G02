@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Route.C41.G02.DAL.Models
 {
     //Model  For 
-    internal class Department
+    public class Department
     {
         public int Id { get; set; }//for beck end
         public string Code { get; set; }// We dont use nullable dont suuport in Net 5

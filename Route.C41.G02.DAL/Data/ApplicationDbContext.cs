@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 
 namespace Route.C41.G02.DAL.Data
 {
-    internal class ApplicationDbContext:DbContext
+    public class ApplicationDbContext:DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlServer("Server = .; Database=MVCAppliction; Trusted_Connection =True, MultipleActiveResultSets = false ");
-        //MultipleActiveResultSets => defulate = false
+        public ApplicationDbContext( DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //    => optionsBuilder.UseSqlServer("Server = .; Database=MVCAppliction; Trusted_Connection =True, MultipleActiveResultSets = false ");
+        ////MultipleActiveResultSets => defulate = false
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

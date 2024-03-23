@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Route.C41.G02.DAL.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +24,28 @@ namespace Route.C41.G02.PL
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {   
+            // Register built -in  services to the Dependency injections Container
             services.AddControllersWithViews();
+
+            ////services.AddTransient<ApplicationDbContext>(); // new object for every time
+            //services.AddSingleton<ApplicationDbContext>();   //new object for run time 
+
+            //services.AddScoped<DbContextOptions<ApplicationDbContext>>();    //new object for Scope only
+
+            services.AddScoped<ApplicationDbContext>();
+            services.AddScoped<DbContextOptions<ApplicationDbContext>>();
+
+            //services.AddDbContext<ApplicationDbContext>(
+            //    contextLifetime:ServiceLifetime.Singleton,
+            //    optionsLifetime: ServiceLifetime.Singleton
+            //    );
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer("Server = .; Database=MVCAppliction; Trusted_Connection =True, MultipleActiveResultSets = False ");
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
