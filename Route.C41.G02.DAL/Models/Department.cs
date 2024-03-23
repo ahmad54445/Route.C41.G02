@@ -16,6 +16,6 @@ namespace Route.C41.G02.DAL.Models
         [Required]
         public string Name { get; set; }
         [Display(Name = "Date Of Creation")]
-        public DateTime DateOfCreateion { get; set; }
+        public DateTime DateOfCreation { get; set; }
     }
 }

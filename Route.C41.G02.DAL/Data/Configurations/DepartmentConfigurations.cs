@@ -17,6 +17,9 @@ namespace Route.C41.G02.DAL.Data.Configurations
             builder.Property(D=>D.Id).UseIdentityColumn(10,10);
             builder.Property(D=>D.Code).HasColumnType("varChar").HasMaxLength(50).IsRequired();
             builder.Property(D=>D.Name).HasColumnType("varChar").HasMaxLength(50).IsRequired();
+            //builder.Property(D => D.DateOfCreation)
+            //    .HasColumnType("datetime2") // or "date" if you only need the date part
+            //    .IsRequired();
         }
     }
 }

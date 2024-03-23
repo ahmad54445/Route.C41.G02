@@ -21,9 +21,28 @@ namespace Route.C41.G02.PL.Controllers
 
         public IActionResult Index()// Return master Paspe 
         {
-            var department=_departmentRepo.GetAll();
-            return View(department); 
+            var department = _departmentRepo.GetAll();
+            return View(department);
 
+        }
+        [HttpGet]//by Default
+        public IActionResult Create()
+        {
+            return View();
+
+        }
+        [HttpPost]//by Default
+        public IActionResult Create(Department department)
+        {
+            if (ModelState.IsValid)  // Server side Validation
+            {
+              var count=  _departmentRepo.Add(department);
+                if(count>0)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            return View(department);
         }
     }
 }

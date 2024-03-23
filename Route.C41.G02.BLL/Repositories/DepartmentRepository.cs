@@ -53,7 +53,6 @@ namespace Route.C41.G02.BLL.Repositories
         {
             return _dbContext.Departments.AsNoTracking().ToList();
         }
-
         public int Update(Department entity)
         {
             _dbContext.Departments.Update(entity);
