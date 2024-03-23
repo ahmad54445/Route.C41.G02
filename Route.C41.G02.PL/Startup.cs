@@ -33,8 +33,8 @@ namespace Route.C41.G02.PL
 
             //services.AddScoped<DbContextOptions<ApplicationDbContext>>();    //new object for Scope only
 
-            services.AddScoped<ApplicationDbContext>();
-            services.AddScoped<DbContextOptions<ApplicationDbContext>>();
+            //services.AddScoped<ApplicationDbContext>();
+            //services.AddScoped<DbContextOptions<ApplicationDbContext>>();
 
             //services.AddDbContext<ApplicationDbContext>(
             //    contextLifetime:ServiceLifetime.Singleton,
