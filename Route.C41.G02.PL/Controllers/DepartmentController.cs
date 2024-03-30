@@ -23,7 +23,6 @@ namespace Route.C41.G02.PL.Controllers
         {
             var department = _departmentRepo.GetAll();
             return View(department);
-
         }
         [HttpGet]//by Default
         public IActionResult Create()

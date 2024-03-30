@@ -15,7 +15,7 @@ namespace Route.C41.G02.DAL.Data.Migrations
                         .Annotation("SqlServer:Identity", "10, 10"),
                     Code = table.Column<string>(type: "varChar(50)", maxLength: 50, nullable: false),
                     Name = table.Column<string>(type: "varChar(50)", maxLength: 50, nullable: false),
-                    DateOfCreateion = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DateOfCreation = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

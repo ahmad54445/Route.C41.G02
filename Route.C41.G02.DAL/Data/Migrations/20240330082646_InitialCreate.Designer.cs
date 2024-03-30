@@ -10,7 +10,7 @@ using Route.C41.G02.DAL.Data;
 namespace Route.C41.G02.DAL.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240323024534_InitialCreate")]
+    [Migration("20240330082646_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace Route.C41.G02.DAL.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varChar(50)");
 
-                    b.Property<DateTime>("DateOfCreateion")
+                    b.Property<DateTime>("DateOfCreation")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")

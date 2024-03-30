@@ -33,7 +33,7 @@ namespace Route.C41.G02.DAL.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varChar(50)");
 
-                    b.Property<DateTime>("DateOfCreateion")
+                    b.Property<DateTime>("DateOfCreation")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
